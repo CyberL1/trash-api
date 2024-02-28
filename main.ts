@@ -1,5 +1,7 @@
 const trash = () => {
-  return new Response("trash API");
+  const trash = Deno.readTextFileSync("./trash.txt");
+
+  return new Response(trash);
 };
 
 Deno.serve(trash);
