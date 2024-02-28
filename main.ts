@@ -24,6 +24,10 @@ const trash = async (req: Request) => {
   </body>
 </html>`;
 
+  if (req.headers.get("user-agent")?.includes("Discord")) {
+    return new Response(image, { headers: { "content-type": "image/png" } });
+  }
+
   return new Response(html, { headers: { "content-type": "text/html" } });
 };
 
