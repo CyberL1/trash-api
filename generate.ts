@@ -27,7 +27,7 @@ export const generateImage = (thing: string | null) => {
   image.composite(dollar, 183, 2);
   image.composite(command, 210, 2);
 
-  let trash = Deno.readTextFileSync("./trash.txt").replaceAll("\r\n", "\r");
+  let trash = Deno.readTextFileSync("./trash.txt").replaceAll("\n", "\r");
 
   if (!thing) trash = trash.replace(" <- this is", "").replace("trash", "");
   else trash = trash.replace("trash", thing);
