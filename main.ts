@@ -6,7 +6,7 @@ const trash = async (req: Request) => {
 
   let trash = Deno.readTextFileSync("./trash.txt");
 
-  if (url.pathname === "/text") {
+  if (req.headers.get("User-Agent")?.includes("curl")) {
     if (!thing) trash = trash.replace(" <- this is", "").replace("trash", "");
     else trash = trash.replace("trash", thing);
 
