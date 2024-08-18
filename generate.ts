@@ -2,7 +2,7 @@ import { Image } from "https://deno.land/x/imagescript@1.2.17/mod.ts";
 import { Color } from "https://deno.land/x/imagescript@1.2.17/v2/framebuffer.mjs";
 
 export const generateImage = (thing: string | null) => {
-  const image = new Image(971, 728);
+  const image = new Image(771, 412);
 
   image.fill(new Color("#000").value);
 
